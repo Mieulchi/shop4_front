@@ -1,13 +1,14 @@
-import AdminMenu from "./AdminMenu.js";
-import AdminHome from "./AdminHome.js";
-import { Route, Routes } from "react-router-dom";
-import MemberManagement from "./MemberManagement.js";
-import GoodsManagement from "./GoodsManagement.js";
-import AddGoods from "./AddGoods.js";
-import Reports from "./Reports.js";
-import { useEffect } from "react";
-import UpdateGoods from "./UpdateGoods.js";
-import CouponManagement from "./CouponManagement.js";
+import AdminMenu from './AdminMenu.js';
+import AdminHome from './AdminHome.js';
+import { Route, Routes } from 'react-router-dom';
+import MemberManagement from './MemberManagement.js';
+import GoodsManagement from './GoodsManagement.js';
+import AddGoods from './AddGoods.js';
+import Reports from './Reports.js';
+import { useEffect } from 'react';
+import UpdateGoods from './UpdateGoods.js';
+import CouponManagement from './CouponManagement.js';
+import UpdateMember from './UpdateMember.js';
 
 function Admin() {
   useEffect(() => {
@@ -17,18 +18,18 @@ function Admin() {
   return (
     <div
       style={{
-        width: "100%",
-        height: "100%",
-        minHeight: "100vh",
-        margin: "0 auto",
-        display: "flex",
+        width: '100%',
+        height: '100%',
+        minHeight: '100vh',
+        margin: '0 auto',
+        display: 'flex',
       }}
     >
       <AdminMenu></AdminMenu>
       <div
         style={{
-          width: "85%",
-          backgroundColor: "#E6E6E6",
+          width: '85%',
+          backgroundColor: '#E6E6E6',
         }}
       >
         <Routes>
@@ -47,6 +48,11 @@ function Admin() {
             path="/updategoods"
             element={<UpdateGoods></UpdateGoods>}
           ></Route>
+          <Route
+            path="/updatemember"
+            element={<UpdateMember></UpdateMember>}
+          ></Route>
+
           <Route
             path="/couponManagement"
             element={<CouponManagement />}
