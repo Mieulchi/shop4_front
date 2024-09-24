@@ -57,7 +57,7 @@ const Home = () => {
 	return (
 		<div
 			className="App"
-			style={{ backgroundColor: '#F7F2E0', height: '100%', minHeight: '100vh' }}
+			style={{ backgroundColor: 'white', height: '100%', minHeight: '100vh' }}
 		>
 			{searching ? <HomeSlider className=""></HomeSlider> : <></>}
 			<div className="container shoe-container">
