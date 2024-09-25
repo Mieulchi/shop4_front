@@ -55,11 +55,8 @@ const Home = () => {
 	}, [state.search]);
 
 	return (
-		<div
-			className="App"
-			style={{ backgroundColor: 'white', height: '100%', minHeight: '100vh' }}
-		>
-			{searching ? <HomeSlider className=""></HomeSlider> : <></>}
+		<div className="App" style={{ height: '100%', minHeight: '100vh' }}>
+			{searching ? <HomeSlider></HomeSlider> : <></>}
 			<div className="container shoe-container">
 				<div className="row shoe-row">
 					{filterTitle.map((a, index) => {

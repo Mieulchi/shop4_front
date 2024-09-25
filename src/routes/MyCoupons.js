@@ -2,8 +2,6 @@ import MyPageLeftSideBar from "../components/MyPageLeftSideBar";
 import React, { useState, useEffect } from "react";
 import styles from "./css/MyCoupons.module.css";
 import { getUserCoupons } from "../services/UserCouponService";
-import { Link } from "react-router-dom";
-
 function MyCoupons() {
   const userSession = JSON.parse(sessionStorage.getItem("user")); // 세션에서 사용자 이름 가져오기
 
@@ -36,12 +34,12 @@ function MyCoupons() {
 
   return (
     <>
-      <div className="myPageContainer">
+      <div className={styles.myPageContainer}>
         <MyPageLeftSideBar />
-        <div className="rightContent">
+        <div className={styles.rightContent}>
           <h2>쿠폰함</h2>
           <hr />
-          <div className="couponTabs">
+          <div className={styles.couponTabs}>
             <button
               onClick={() => handleToggle("available")}
               className={activeTab === "available" ? "active" : ""}
@@ -54,9 +52,8 @@ function MyCoupons() {
             >
               사용 완료{usedCoupons.length}개
             </button>
-            <Link to="/CouponRoulette">쿠폰룰렛</Link>
           </div>
-          <ul className="couponList">
+          <ul className={styles.couponList}>
             {activeTab === "available"
               ? availableCoupons.map((coupon, idx) => (
                   <li key={idx}>{coupon.coupons.name}</li> // 고유한 id 사용
