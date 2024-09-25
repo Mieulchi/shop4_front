@@ -11,5 +11,5 @@ export const distributeCoupon = (memberId, couponId) =>
   axios.post(REST_API_BASE_URL + "/" + memberId + "/" + couponId);
 
 // 쿠폰 사용
-export const useCoupon = (userCouponMapId) =>
+export const requestUseCoupon = (userCouponMapId) =>
   axios.patch(REST_API_BASE_URL + "/" + userCouponMapId);

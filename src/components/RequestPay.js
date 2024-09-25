@@ -32,6 +32,7 @@ const clearCartAfterPayment = async (goodsIds) => {
 };
 
 const requestPay = (cartData, receiver, totalPrice) => {
+  console.log(totalPrice);
   const { IMP } = window;
   IMP.init("imp43064854");
 
@@ -72,7 +73,7 @@ const requestPay = (cartData, receiver, totalPrice) => {
               orderDate: new Date().toISOString(),
               member: { id: JSON.parse(sessionStorage.getItem("user")).id },
             };
-
+            console.log(order);
             const orderResponse = await createOrder(order);
             const orderId = orderResponse.data.id; // 생성된 주문의 ID
 
@@ -86,8 +87,9 @@ const requestPay = (cartData, receiver, totalPrice) => {
               paymentDate: new Date().toISOString(),
               paymentStatus: "COMPLETED",
               paymentMethod: "CARD",
-              order: { id: orderId },
+              orderId,
             };
+            console.log(payment);
             await createPayment(payment);
 
             // cartData에서 orderDetail 생성

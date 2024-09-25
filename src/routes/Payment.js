@@ -48,6 +48,7 @@ function Payment() {
 
   const handlePayment = async () => {
     try {
+      console.log(totalPayment);
       const result = await requestPay(cartData, receiver, totalPayment);
       if (result.success) {
         navigator("/paymentSuccess"); // 성공 시 paymentSuccess 페이지로 이동

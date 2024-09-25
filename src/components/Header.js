@@ -220,7 +220,18 @@ const Header = () => {
               <br />
               장바구니
             </Nav.Item>
-            <Nav.Item></Nav.Item>
+            <Nav.Item
+              className="me-3 btn"
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                isLoggedIn
+                  ? handleNavigation("/couponRoulette")
+                  : handleLogin();
+              }}
+            >
+              <br />
+              쿠폰룰렛
+            </Nav.Item>
           </Nav>
           <h2 style={{ color: "black", marginTop: "auto" }}>
             {isLoggedIn ? <div>{user.name + "님"}</div> : <div>Guest</div>}
